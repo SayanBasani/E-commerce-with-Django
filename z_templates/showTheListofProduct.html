@@ -1,0 +1,18 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+ const remove_from_cart = document.querySelector('.remove_from_cart')
+ remove_from_cart.addEventListener('click',()=>{
+  fetch('/remove_from_cart/',{
+    method : 'POST',
+    headers : {
+      'Content-type':'application/json'
+    },
+    body : JSON.stringify({"id" : 'abcdDEMO'})
+  })
+  .then(Response => console.log(Response))
+  .then(data => {
+    console.log('data')
+  })
+  .catch(error => (console.error(error)))
+ })
+</script>
